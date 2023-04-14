@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baller.</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="icon" type="image/x-icon" href="Group 1.png">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+      .popup, .popup-2 {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup__content, .popup__content-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.popup__title {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.popup__button, .popup__button-2, #btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.popup__button:hover, .popup__button-2:hover, #btn:hover {
+  background-color: #0069d9;
+}
+.infos {
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+}
+</style>
+</head>
+<body class="font-poppins">
+    <div class="flex flex-col items-center">
+        <h1 class="text-5xl text-center mt-10 mb-2 font-bold sm:text-6xl">Baller.</h1>
+        <p class="text-xs sm:text-base"> prepared by <a href="https://github.com/Drein100" target="_blank">atakan karatas</a></p>
+        <button id="infoBtn" class="mBtn mt-10 sm:btn sm:mt-10">How to play?</button>
+        <div id="info" class="popup hidden">
+            <div class="popup__content">
+              <p class="mb-8 text-center">Welcome the <span class="font-bold">Baller.</span></p>
+              <p class="mb-5 font-medium text-start">In this game, you will try to know the name of a randomly generated football player in <span class="font-bold">
+                8 attempts</span> with clues.</p>
+              <p class="mb-5 font-medium text-start">There are 3 modes in the game as <span class="font-bold">easy, medium and hard.</span></p>
+              <p class="mb-2 text-start">In <span class="font-bold">easy mode,</span> you will start with 3 features.</p>
+              <p class="mb-2 text-start">In <span class="font-bold">medium mode,</span> you will start with 2 features.</p>
+              <p class="mb-5 text-start">In <span class="font-bold">hard mode,</span> you will start with 1 feature.</p>
+              <p class="mb-5 font-medium text-start">In each mode, a new feature is unlocked every <span class="font-bold">3 tries.</span></p>
+              <p class="mb-8 font-medium text-start">Note that you should write <span class="font-bold">both the first and last names</span>  of the player.</p>
+              <p class="font-bold">Good luck!</p>
+              <button id="btn" >Thanks!</button>
+            </div>
+          </div>
+        <!-- Choosing difficulty -->
+        <p id="difficultyText" class="text-center font-bold mt-10 mb-5 sm:text-lg">Choose your difficulty.</p>
+        <div id="difficultyButtons" class="flex w-full justify-evenly sm:justify-center">
+            <button id="easyButton" class="mBtn sm:btn">Easy</button>
+            <button id="mediumButton" class="mBtn sm:btn">Medium</button>
+            <button id="hardButton" class="mBtn sm:btn">Hard</button>
+        </div>
+    </div>
+    <div class="flex justify-center sm:playerSection">
+        <div class="bg-slate-100 rounded-lg m-5 w-5/6 sm:w-4/6 lg:w-5/12">
+            <p id="playerAge" class="font-medium py-3 pl-10">Age: </p>
+            <p id="playerNat" class="font-medium py-3 pl-10">Nationality: </p>
+            <p id="playerPos" class="font-medium py-3 pl-10">Position: </p>
+            <p id="playerTeam" class="font-medium py-3 pl-10">Team: </p>
+            <p id="playerLeague" class="font-medium py-3 pl-10">League: </p>
+        </div>
+    </div>
+
+    <div id="guessPart" class="flex-col items-center hidden">
+        <p class="text-center font-bold mt-3 mb-5 sm:text-lg">Make a guess: </p>
+        <input id="inputText" type="text" class="block mx-auto border border-gray-300 rounded-md py-2 px-4 w-48 text-center">
+        <button id="submitButton" class="mBtn mt-5 sm:btn">Submit</button>
+    </div>
+    <!-- End game message -->
+    <div id="popup" class="popup hidden">
+        <div class="popup__content">
+          <h2 class="popup__title mb-5"></h2>
+          <p class="popup__message font-medium"></p>
+          <button class="popup__button">OK</button>
+        </div>
+      </div>
+      <!-- Check the input -->
+    <div id="popup-2" class="popup hidden">
+        <div class="popup__content">
+          <p>Please enter a <span class="font-bold">text</span></p>
+          <button class="popup__button-2">OK</button>
+        </div>
+      </div>    
+</body>
+<script src="./app.js"></script>
+</html>

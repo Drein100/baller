@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .font-Poppins {
+        font-family: "Poppins", serif;
+    }
+    .btn {
+        @apply block bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-md px-6 py-3 text-lg mx-5 ;
+    }
+    .mBtn {
+        @apply block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md;
+    }
+    .playerSection {
+        @apply flex justify-center text-lg;
+    }
+
+}
